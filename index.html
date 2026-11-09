@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#b3261e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ПРОЕКТ 200">
+<meta name="description" content="ПРОЕКТ 200 — персональная система подготовки к ЕГЭ по профильной математике и физике. Работает офлайн.">
+<title>ПРОЕКТ 200</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="boot" id="boot">
+  <div>ВЦ «ПРОЕКТ 200» · ЭВМ УЧЕБНАЯ</div>
+  <div>ЗАГРУЗКА МОДУЛЕЙ…</div>
+  <noscript><div>ДЛЯ РАБОТЫ НУЖЕН JAVASCRIPT</div></noscript>
+</div>
+<header id="top">
+  <button class="back hide" id="backBtn" aria-label="Назад">‹</button>
+  <svg class="star" viewBox="0 0 100 100" aria-hidden="true"><use href="#i-star"/></svg>
+  <div class="ttl"><b id="ttl">ПРОЕКТ 200</b><span id="sub">Знание. Дисциплина. Совершенство.</span></div>
+  <div id="topx"></div>
+</header>
+<main id="view"></main>
+<nav id="nav">
+  <button data-go="home"><svg viewBox="0 0 24 24"><use href="#i-file"/></svg>Дело</button>
+  <button data-go="fac/math"><svg viewBox="0 0 24 24"><use href="#i-compass"/></svg>Матем.</button>
+  <button data-go="fac/phys"><svg viewBox="0 0 24 24"><use href="#i-atom"/></svg>Физика</button>
+  <button data-go="exam"><svg viewBox="0 0 24 24"><use href="#i-seal"/></svg>Комиссия</button>
+  <button data-go="more"><svg viewBox="0 0 24 24"><use href="#i-menu"/></svg>Ещё</button>
+</nav>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-star" viewBox="0 0 100 100"><path fill="#ffd27a" d="M50 4l13.4 31.6 34.2 3-26 22.5 7.8 33.5L50 77 20.6 94.6l7.8-33.5-26-22.5 34.2-3z"/><path fill="#b3261e" d="M50 16l9.8 23 24.9 2.2-18.9 16.4 5.7 24.4L50 69.2 28.5 82l5.7-24.4-18.9-16.4 24.9-2.2z"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M6 2h9l4 4v16H6zM15 2v4h4M9 11h7M9 15h7M9 19h4"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="5" r="2"/><path d="M11 7L5 21M13 7l6 14M7.5 15h9"/></g></symbol>
+    <symbol id="i-atom" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/></g><circle cx="12" cy="12" r="2" fill="currentColor"/></symbol>
+    <symbol id="i-seal" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="10" r="7"/><path d="M8 16l-2 6 6-3 6 3-2-6"/><path d="M12 6l1.2 2.6 2.8.3-2.1 1.9.6 2.8L12 12.2l-2.5 1.4.6-2.8L8 8.9l2.8-.3z"/></g></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M3 5c3-1 6-1 9 1 3-2 6-2 9-1v14c-3-1-6-1-9 1-3-2-6-2-9-1zM12 6v14"/></symbol>
+    <symbol id="i-flask" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M9 2h6M10 2v7L4 20h16l-6-11V2M7 15h10"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M3 3v18h18M7 16v-4M12 16V8M17 16v-7"/></symbol>
+    <symbol id="i-medal" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 2l4 7 4-7"/><circle cx="12" cy="15" r="6"/><path d="M12 12l1 2h2l-1.6 1.3.6 2.2-2-1.3-2 1.3.6-2.2L9 14h2z"/></g></symbol>
+    <symbol id="i-gear" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3.2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></g></symbol>
+    <symbol id="i-plan" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4M7 13h3M7 17h3M13 13h4"/></g></symbol>
+  </defs>
+</svg>
+
+<script src="core.js"></script>
+<script src="database.js"></script>
+<script src="content-math.js"></script>
+<script src="content-physics.js"></script>
+<script src="tasks.js"></script>
+<script src="viz.js"></script>
+<script src="labs.js"></script>
+<script src="exam.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
